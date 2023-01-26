@@ -1,0 +1,19 @@
+#title {
+  font-size: 40px;
+}
+
+.sample {
+  border: solid black 2px;
+  border-radius: 1rem;
+  padding: 10px 30px;
+}
+
+.tag {
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: blanchedalmond;
+}
+
+p {
+  font-size: 20px;
+}
