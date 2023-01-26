@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  display: flex;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #C3C5C7;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+body::-webkit-scrollbar-track {
+  display: none;
+}
+
+body::-webkit-scrollbar-track-piece:end {
+  margin-bottom: 10px;
+}
+
+nav {
+  padding-right: 20px;
+  border-right: 2px solid black;
+}
+
+#main {
+  padding: 20px;
+}
+
+nav>ol>li {
+  margin: 30px 0px;
+  list-style: none;
+}
+
+ul {
+  margin-top: 20px;
+}
+
+img {
+  width: 300px;
+}
+
+.index {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.list {
+  border-radius: 5px;
+  list-style: none;
+  font-size: 20px;
+  padding: 5px 10px;
+  transition: all 0.3s;
+}
+
+.list:hover {
+  background-color: gray;
+  color: white;
+}
+
+.selected {
+  background-color: #272727;
+  color: white;
+}
