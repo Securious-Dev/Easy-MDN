@@ -1,0 +1,26 @@
+.code-keyword {
+  color: #0069c2;
+}
+
+.code-constant {
+  color: #007936;
+}
+
+.code-annotation {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.code-function {
+  color: #d30038;
+}
+
+code {
+  font-family: 'consalas';
+}
+
+pre {
+  background-color: #f2f1f1;
+  padding: 5px;
+  border-radius: 2px;
+  line-height: auto;
+}
