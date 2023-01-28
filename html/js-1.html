@@ -46,8 +46,9 @@
   <p>alert는 브라우저의 경고창을 이용해 출력합니다.</p>
   <pre>
     <code>
-      window.<span class="code-function">alert(<span class="code-constant">'Hello World!'</span>)</span>;
+      window.<span class="code-function">alert(<span class="code-constant">'Hello World!'</span>)</span>; <span class="code-annotation">// window.alert() 대신 alert()만 사용해도 작동한다.</span>
     </code>
+    <button type="button" onclick="alert('Hello World!')">test</button>
   </pre>
   <p>console.log는 콘솔창을 이용해 출력합니다.</p>
   <p>(콘솔창은 브라우저에서 F12 > 콘솔에서 사용할 수 있습니다. 이 콘솔창에 JS 코드를 작성하여 실행할 수 있습니다.)</p>
@@ -55,5 +56,6 @@
     <code>
       console.<span class="code-function">log(<span class="code-constant">'Hello World!'</span>)</span>;
     </code>
+    <button type="button" onclick="console.log('Hello World!')">test</button> (버튼을 누르고 콘솔창을 확인하세요.)
   </pre>
 </body>
