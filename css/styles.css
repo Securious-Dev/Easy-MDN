@@ -60,6 +60,7 @@ img {
 .list:hover {
   background-color: gray;
   color: white;
+  cursor: pointer;
 }
 
 .selected {
