@@ -126,4 +126,20 @@
   </pre>
   <p>조건이 더 많아지더라도 else if를 사용하면 모두 작성할 수 있습니다.</p>
   <p>하지만 가독성이 떨어지므로 많은 수의 조건을 처리해야 하는 경우에는 switch문을 참고하는 것을 추천드립니다.</p>
+  <p>아래 코드는 if문과 else문의 이해를 돕기 위한 예시입니다. 0이상의 숫자를 입력하여 결과를 확인해보세요.</p>
+  <p>(아래 코드에는 양의 정수 이외의 다른 값을 입력하는 경우에 대한 처리가 추가로 되어있습니다. 아래 코드는 if문이 어떤 상황에 쓰이며 어떻게 작성해야 하는지 이해하는 용도로 사용하세요.)</p>
+  <pre>
+    <code>
+      <span class="code-keyword">const</span> i = <input id="ifTest" type="number" min="0" onkeyup="if(window.event.keyCode==13){testIf()}" placeholder="0이상의 숫자"/>;
+
+      <span class="code-keyword">if</span> (i % 2 === <span class="code-constant">0</span>) {
+        <span class="code-keyword">alert</span> (<span class="code-constant">'짝수(또는 0) 입니다'</span>); <span class="code-annotation">// i가 0또는 짝수인 경우 실행</span>
+      } <span class="code-keyword">else if</span> (i % 2 === <span class="code-constant">1</span>) {
+        <span class="code-keyword">alert</span> (<span class="code-constant">'홀수 입니다'</span>); <span class="code-annotation">// i가 홀수인 경우 실행 (모든 홀수를 2로 나눈 나머지는 1이다)</span>
+      } <span class="code-keyword">else</span> {
+        <span class="code-keyword">alert</span> (<span class="code-constant">'양의 정수가 아닙니다'</span>); <span class="code-annotation">// i가 양의 정수가 아닌 경우 실행</span>
+      }
+    </code>
+    <button type="button" onclick="testIf()">test</button>
+  </pre>
 </body>
