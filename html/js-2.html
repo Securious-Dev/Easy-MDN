@@ -7,7 +7,7 @@
   <pre>
     <code>
       <span class="code-keyword">while</span> (조건) {
-        <span class="code-annotation">// 조건을 만족하는 경우 실행할 코드;</span>
+        <span class="code-annotation">// 조건을 만족하는 경우 실행할 코드</span>
       }
     </code>
   </pre>
@@ -16,7 +16,7 @@
   <pre>
     <code>
       <span class="code-keyword">while</span> (true) {
-        <span class="code-annotation">// 무한히 실행할 코드;</span>
+        <span class="code-annotation">// 무한히 실행할 코드</span>
       }
     </code>
   </pre>
@@ -25,7 +25,7 @@
   <pre>
     <code>
       <span class="code-keyword">let</span> i = <span class="code-constant">1</span>;
-      <span class="code-keyword">while</span> (i &lt;= 10) {
+      <span class="code-keyword">while</span> (i &lt; 11) {
         console.<span class="code-function">log</span>(i);
         i++;
       }
@@ -33,6 +33,36 @@
     <button onclick="testWhile()" type="button">test</button>
   </pre>
   <p>i의 경우 코드가 실행되며 계속 값이 변화하기 때문에 let 키워드로 선언해야 합니다.</p>
-  <p>위 코드의 결과는 1부터 10까지의 숫자가 콘솔로 출력됩니다. (콘솔창을 열어 확인해보세요)</p>
+  <p>위 코드의 결과는 1부터 10까지의 숫자가 콘솔로 출력됩니다. (콘솔창을 열어 결과를 확인해보세요)</p>
   <p>i가 11이 되면 while문의 조건을 만족하지 않기 때문에 코드가 실행되지 않습니다.</p>
+  <h3>2.1.2. for문</h3>
+  <p>while문 보다 복잡한 형태를 갖지만 가장 많이 쓰이는 반복문 입니다.</p>
+  <pre>
+    <code>
+      <span class="code-keyword">for</span> (반복문 시작점; 반복문 조건; 각 반복 이후 수행될 것) {
+        <span class="code-annotation">// 조건을 만족하는 경우 실행될 코드</span>
+      }
+    </code>
+  </pre>
+  <p>마찬가지로 1부터 10까지 콘솔창에 출력하도록 하는 for문은 다음과 같이 작성할 수 있습니다. (콘솔창을 열어 결과를 확인해보세요)</p>
+  <pre>
+    <code>
+      <span class="code-keyword">for</span> ( <span>let</span> i = <span class="code-constant">1</span>; i &lt; 11; i++ ) {
+        console.<span class="code-function">log</span>(i);
+      }
+    </code>
+    <button type="button" onclick="testFor()">test</button>
+  </pre>
+  <p>i는 1부터 시작합니다. i가 1인경우 i &lt; 11이라는 조건을 만족하기 때문에 for문 안에 있는 코드가 실행됩니다.</p>
+  <p>for문 안의 코드가 실행되고 난 뒤, i++을 수행하여 i는 2가 됩니다.</p>
+  <p>위의 과정을 반복하여 i가 11이 된다면 i &lt; 11을 만족하지 않기 때문에 더이상 for문은 실행되지 않습니다.</p>
+  <p>결론적으로 반복문 시작점은 for문이 처음 실행되며 한 번만 실행되며 for문이 반복되는 동안 반복문의 조건과 각 반복 이후 수행될 것은 계속 실행됩니다.</p>
+  <p>for문에서 무한루프는 아래와 같이 만들 수 있습니다.</p>
+  <pre>
+    <code>
+      <span class="code-keyword">for</span> (;;) {
+        <span class="code-annotation">// 무한히 실행할 코드</span>
+      }
+    </code>
+  </pre>
 </body>
