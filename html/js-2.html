@@ -142,4 +142,57 @@
     </code>
     <button type="button" onclick="testIf()">test</button>
   </pre>
+  <h2>2.3. 함수</h2>
+  <p>함수는 스크립트를 작성하다 보면 유사한 동작을 하는 코드가 여러 곳에서 필요할 때 주로 사용합니다.</p>
+  <p>함수는 function 키워드를 이용해 선언할 수 있습니다.</p>
+  <pre>
+    <code>
+      <span class="code-keyword">function</span> <span class="code-function">함수이름</span>(매개변수(Parameter)) {
+        <span class="code-annotation">// 함수가 실행할 코드</span>
+        <span class="code-keyword">return</span> 함수가 반환할 값;
+      }
+    </code>
+  </pre>
+  <p>return을 이용해 해당 함수가 반환할 값을 정할 수 있습니다.</p>
+  <p>함수는 함수 내부에서 여러 연산을 통해 함수의 목적에 맞는 값을 생성하고 return하게 됩니다.</p>
+  <p>위의 형식에서 볼 수 있듯 함수는 인수를 받을 수 있으며 받아온 인수를 함수 내부에서 사용할 수 있습니다.</p>
+  <pre>
+    <code>
+      <span class="code-keyword">function</span> <span class="code-function">addNum</span>(a, b) {
+        <span class="code-keyword">const</span> answer = a + b;
+
+        <span class="code-keyword">return</span> answer;
+        <span class="code-annotation">// 또는 return a + b;</span>
+      }
+    </code>
+  </pre>
+  <p>addNum 함수는 a와 b라는 매개변수를 가지며 함수 내부에서 a + b를 수행하여 값을 구하고 return을 통해 반환합니다.</p>
+  <p>매개변수는 갯수에 상관없이 가질 수 있으며 매개변수를 갖지 않는 함수도 생성할 수 있습니다.</p>
+  <pre>
+    <code>
+      <span class="code-keyword">function</span> <span class="code-function">returnNothing</span>() {
+        <span class="code-keyword">alert</span>(<span class="code-constant">'return nothing!'</span>);
+      }
+    </code>
+  </pre>
+  <p>함수를 호출하는 방법은 함수의 이름과 인수를 작성하는 것입니다.</p>
+  <ul>
+    <li>매개변수(Parameter): 함수 선언 방식 괄호 사이에 있는 변수(함수 선언 시 쓰이는 용어)</li>
+    <li>인수{Argument}: 함수를 호출할 때 매개변수에 전달되는 값(함수 호출 시 쓰이는 용어)</li>
+  </ul>
+  <p>매개변수가 존재하지 않는다면 인수를 작성하지 않아도 되며, 매개변수를 1개 이상 필요로 하는 함수의 경우 모든 인수를 순서대로 작성해야 합니다.</p>
+  <p>매개변수가 많아지는 경우 함수의 기능을 세분화해 여러개의 함수를 만들더라도 매개변수의 갯수를 최소한으로 유지하는 것이 이상적인 함수입니다.</p>
+  <p>이상적인 함수는 한 가지 일만 해야하며 가급적 작게 만들어야 하기 때문입니다.</p>
+  <pre>
+    <code>
+      <span class="code-keyword">function</span> <span class="code-function">addNum</span>(a, b) { <span class="code-annotation">// a, b는 매개변수</span>
+        <span class="code-keyword">const</span> answer = a + b;
+
+        <span class="code-keyword">return</span> answer;
+      }
+      
+      <span class="code-keyword">const</span> result = <span class="code-function">addNum</span>(1, 2); <span class="code-annotation">// 1, 2 함수에 전달하는 인수이며 addNum의 매개변수 a와 b에 할당된 후 연산을 수행하여 반환</span>
+      console.<span class="code-keyword">log</span>(result); <span class="code-annotation">// 결과는 3</span>
+    </code>
+  </pre>
 </body>
