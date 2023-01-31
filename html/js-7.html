@@ -53,6 +53,23 @@
   <p>options 부분에는 fetch 함수의 옵션을 설정할 수 있습니다.</p>
   <p>HTTP Method(GET, POST 등)을 지정할 수 있으며 Content-Type을 지정할 수도 있습니다.</p>
   <p>fetch 함수의 더 많은 정보는 <a href="https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">해당 문서</a>를 참고하면 됩니다.</p>
+  <p>위의 과정을 통해 전달받은 데이터를 활용하기 위해 함수를 만들어 사용할 수 있습니다.</p>
+  <pre id="fetchTestSpace">
+    <code>
+      <span class="code-function">fetch</span>(<span class="code-constant">'http://shibe.online/api/shibes?urls=true&httpsUrls=true'</span>)
+        .<span class="code-function">then</span>((response) => response.<span class="code-function">json</span>())
+        .<span class="code-function">then</span>((data) => <span class="code-function">alertImgUrl</span>(data));
+      
+      <span class="code-keyword">function</span> <span class="code-function">alertImgUrl</span>(src) {
+        <span class="code-function">alert</span>(src[0]);
+      }
+    </code>
+    <button onclick="fetchTest()">test</button>
+  </pre>
+  <p>위의 API는 랜덤한 강아지 사진을 받을 수 있는 API 입니다.</p>
+  <p>(alert로 표시되는 주소를 브라우저에 입력해보세요)</p>
+  <p>예시에서 볼 수 있듯이 fetch를 이용해 데이터를 받아온 뒤 해당 데이터로 자유롭게 연산을 할 수 있습니다.</p>
+  <p>위에서 사용한 함수는 alert라는 아주 단순한 기능만을 수행하지만(해당 함수는 예시를 위한 것이며 alert라는 함수는 이미 존재하기 때문에 별도의 함수로 구분하는 것이 의미없다) 복잡한 기능을 수행하는 함수를 작성할 수도 있습니다. (사진을 받아서 HTML 페이지에 img 태그로 삽입, 사진을 특정 디렉토리에 저장 등)</p>
   <!-- <h2>7.4. Async/Await</h2>
   <p>JavaScript는 비동기 처리를 한다는 특징이 있습니다.</p>
   <p>비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미합니다.</p>
