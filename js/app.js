@@ -18,6 +18,7 @@ async function importPage(event) {
   event.target.classList.add("selected");
   changeStyle(event.target.id + ".css")
   document.querySelector('#main').innerHTML = await fetchHtmlAsText(event.target.id + ".html");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 list.forEach((title) => (title.addEventListener("click", importPage)));
