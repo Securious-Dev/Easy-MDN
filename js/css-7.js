@@ -1,21 +1,35 @@
-const classSel1 = document.querySelector("#class1");
-const classSel2 = document.querySelector("#class2");
-const b1 = document.querySelector("#c1");
-const b2 = document.querySelector("#c2");
-
-console.log(classSel1, b1);
-
 function classSelector1() {
-    classSel1.classList.remove("cy");
-    classSel2.classList.remove("cy");
-    classSel1.classList.add("cy");
-};
-
-function classSelector2() {
+    const classSel1 = document.querySelector("#class1");
+    const classSel2 = document.querySelector("#class2");
     classSel1.classList.remove("cy");
     classSel1.classList.add("cy");
     classSel2.classList.add("cy");
-};
+}
 
-b1.addEventListener("click", classSelector1);
-b2.addEventListener("click", classSelector2);
+function classSelector2() {
+    const classSel1 = document.querySelector("#class1");
+    const classSel2 = document.querySelector("#class2");
+    classSel1.classList.remove("cy");
+    classSel2.classList.remove("cy");
+    classSel2.classList.add("cy");
+}
+
+function idSelector() {
+    const idSel1 = document.querySelector("#i1");
+    idSel1.classList.toggle("cy");
+}
+
+function attSelector1() {
+    const ah = document.querySelector("#ah");
+    ah.classList.toggle("cy");
+}
+
+function attSelector2() {
+    const it = document.querySelector("#it");
+    it.classList.toggle("wh");
+}
+
+function hovSelector() {
+    const dh = document.querySelector("#dh");
+    dh.classList.toggle("hov")
+}

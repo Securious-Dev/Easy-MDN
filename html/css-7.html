@@ -28,14 +28,14 @@
     <h2>2.3 클래스(Class) 선택자</h2>
     <pre>
         <code>
-            .class1 {color: yellow;}
+            .class1 {color: red;}
         </code>
-        <button id="c1">적용</button>
+        <button onclick="classSelector1()">적용</button>
         
         <code>
-            div.class1 {color : yellow;}
+            div.class1 {color : red;}
         </code>
-        <button id="c2">적용</button>
+        <button onclick="classSelector2()">적용</button>
         <code>
             &lt;!-- HTML --&gt;
 
@@ -57,25 +57,20 @@
     <h2>2.4 아이디(ID) 선택자</h2>
     <pre>
         <code>
-            .id1 {color: yellow;}
+            #id1 {color: red;}
         </code>
-        <button>적용</button>
-        <code>
-            div.id1 {color: yellow;}
-        </code>
-        <button>적용</button>
+        <button onclick="idSelector()">적용</button>
         <code>
             &lt;!-- HTML --&gt;
 
             &lt;p id="id1"&gt; p id1 &lt;/p&gt;
-            &lt;p id="id2"&gt; p id2 &lt;/p&gt;
-            &lt;div id="id1"&gt; p id1 &lt;/div&gt;
+            &lt;p&gt; p &lt;/p&gt;
+            
         </code>
     </pre>
     <div class="sample">
-        <p>p id1</p>
-        <p>p id2</p>
-        <p>div id1</p>
+        <p id="i1">p id1</p>
+        <p>p</p>
     </div>
     <p> ID 선택자는 마침표 대신 #을 사용하고, class속성 대신 id속성을 이용한다는 점을 제외하면 클래스 선택자와 거의 유사합니다.</p>
     <h3>* 클래스(Class) 선택자 VS 아이디(ID) 선택자</h3>
@@ -127,24 +122,24 @@
     <h2>2.6 속성 선택자</h2>
     <pre>
         <code>
-            a[href] {color: yellow;}
-        <button>적용</button>
+            a[href] {color: red;}
+        <button onclick="attSelector1()">적용</button>
         <code>
-            input[type="text"] {width: 100px; height: 100px;}
+            input[type="text"] {font-size: 50px;}
         </code>
-        <button>적용</button>
+        <button onclick="attSelector2()">적용</button>
         <code>
             &lt;!-- HTML --&gt;
 
-            &lt;a href="www.google.com"&gt; Attribute &lt;/a&gt;
+            &lt;a href="www.google.com"&gt; a href &lt;/a&gt;
             &lt;input type="text"&gt;
             &lt;input type="button"&gt;
         </code>
     </pre>
     <div class="sample">
-        <p>a href</p>
-        <p>p class2</p>
-        <p>div class1</p>
+        <p id="ah">a href</p>
+        <input id="it" type="text" placeholder="input text">
+        <input type="button" value="input button">
     </div>
     <p>속성 선택자는 모두 태그 명과 대괄호 안의 속성 값을 이용하며, 다양한 사용법들이 있습니다.</p>
     <p>그 중에서 대표적인 2가지 방법을 예시를 통해 알아보겠습니다.</p>
@@ -154,17 +149,20 @@
     <h2>2.7 가상 클래스 선택자</h2>
     <pre>
         <code>
-            div:hover {color: yellow;}
+            div:hover {color: red;}
         </code>
-        <button>적용</button>
+        <button onclick="hovSelector()">적용</button>
     </pre>
     <div class="sample">
-        <p>div hover</p>
+        <p id="dh">div hover</p>
     </div>
     <p>가상 클래스는 웹 문서의 소스에는 실제로 존재하지 않지만, 필요에 의해 임의로 가상의 선택자를 지정하여 사용하는 것을 말합니다.</p>
     <p>위의 예시에 있는 :hover선택자는 '마우스 포인터가 해당 요소 위에 올라가 있는 상태'를 선택합니다.</p>
     <p>그래서 해당 요소위에 마우스 포인터가 올라가면 스타일이 적용되고, 마우스 포인터가 떨어지면 스타일이 적용되지 않습니다.</p>
     <h1>3. 선택자 적용 우선순위</h1>
+    <p>선택자는 어떤 종류의 선택자를 이용하는 지에 따라 적용 시 우선순위가 존재합니다.</p>
+    <p>보통 선택자가 보다 더 일반적인 선택을 하는 경우 우선 순위가 밀려납니다.</p>
+    <p>이에 따른 선택자들의 우선순위는 다음과 같습니다.</p>
     <h3>1. !important</h3>
     <pre>
         <code>
@@ -173,9 +171,7 @@
     </pre>
     <p>위와 같은 방식으로 사용하게 되면 다른 선택자보다 항상 우선적으로 적용됩니다.</p>
     <h3>2. ID 선택자</h3>
-    <p>ID 선택자의 경우는 </p>
     <h3>3. CLASS 선택자, 속성 선택자, 가상 클래스 선택자</p>
     <h3>4. 태그 선택자</h3>
     <h3>5. 전체 선택자</h3>
-    <h3></h3>
 </body>

@@ -26,5 +26,13 @@ pre {
   }
 
 .cy {
-    color: yellow;
+    color: red;
+}
+
+.wh {
+    font-size: 50px;
+}
+
+.hov:hover {
+    color: red;
 }
