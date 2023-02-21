@@ -1,0 +1,38 @@
+.size1 {
+    width: 700px;
+    height: 200px;
+}
+
+.size2 {
+    width: 500px;
+    height: 145px;
+}
+
+code {
+    font-family: 'consalas';
+}
+  
+pre {
+    background-color: #f2f1f1;
+    padding: 5px;
+    border-radius: 2px;
+    line-height: auto;
+}
+
+.sample {
+    border: solid black 2px;
+    border-radius: 1rem;
+    padding: 10px 30px;
+  }
+
+.cy {
+    color: red;
+}
+
+.wh {
+    font-size: 50px;
+}
+
+.hov:hover {
+    color: red;
+}

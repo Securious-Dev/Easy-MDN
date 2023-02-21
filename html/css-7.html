@@ -1,0 +1,177 @@
+<body>
+    <h1>1. 선택자란?</h1>
+    <p>선택자는 HTML페이지의 특정요소를 '선택'하여 스타일을 적용시켜주는 역할을 합니다.</p>
+    <img class="size1" src="../asset/css_selector.png">
+    <p>CSS문장의 제일 앞 부분에 위치한 요소가 바로 선택자 입니다.</p>
+    <p>이를 통해 HTML페이지 안의 특정 요소들을 선택해서 선언 블록(Declaration Block)의 내용을 적용 시켜 줍니다.</p>
+    <h1>2. 선택자의 종류</h1>
+    <h2>2.1 전체 선택자</h2>
+    <pre>
+        <code>
+            * { margin: 0;}
+        </code>
+    </pre>
+    <p>
+        <p>전체 선택자는 HTML페이지의 모든 요소(태그)에 같은 CSS속성을 적용합니다.</p>
+        <p>때문에 보통 margin이나 padding값을 초기화 하는 등 주로 기본 값 설정 시에 사용 합니다.</p>
+        <p>하지만 전체 선택자를 사용하면 문서 안의 모든 요소를 읽어 내려야 하므로 페이지의 로딩 속도가 느려질 수 있습니다.</p>
+        <p>따라서, 좀 더 신중하게 사용해야 하는 선택자입니다.</p>
+    </p>
+    <h2>2.2 태그 선택자</h2>
+    <pre>
+        <code>
+            p { color: red;}
+        </code>
+    </pre>
+    <p>태그 선택자는 HTML에서 사용하는 태그 이름을 이용해 해당 태그 모두를 선택합니다.</p>
+    <p>따라서 위 예시의 경우에는 해당 HTML페이지의 모든 p태그에 스타일이 적용됩니다.</p>
+    <h2>2.3 클래스(Class) 선택자</h2>
+    <pre>
+        <code>
+            .class1 {color: red;}
+        </code>
+        <button onclick="classSelector1()">적용</button>
+        
+        <code>
+            div.class1 {color : red;}
+        </code>
+        <button onclick="classSelector2()">적용</button>
+        <code>
+            &lt;!-- HTML --&gt;
+
+            &lt;p class="class1"&gt; p class1 &lt;/p&gt;
+            &lt;p class="class2"&gt; p class2 &lt;/p&gt;
+            &lt;div class="class1"&gt; div class1 &lt;/div&gt;
+        </code>
+    </pre>
+    <div class="sample">
+        <p id="class1">p class1</p>
+        <p>p class2</p>
+        <p id="class2">div class1</p>
+    </div>
+    <p>클래스 선택자는 마침표에 class 속성 값을 추가해 이용합니다.</p>
+    <p>이때 해당 값을 class 속성 값으로 가진 HTML 요소를 찾아 선택합니다.</p>
+    <p>첫번째 예시의 경우는 class1이라는 class 속성 값을 가진 모든 태그를 선택합니다.</p>
+    <p>두번째 예시의 경우는 특정 태그를 지정하여 class2라는 class 속성 값을 가진 태그 중 div 태그만을 선택하게 됩니다.</p>
+    <p>따라서 첫번째 예시의 경우에는</p>  
+    <h2>2.4 아이디(ID) 선택자</h2>
+    <pre>
+        <code>
+            #id1 {color: red;}
+        </code>
+        <button onclick="idSelector()">적용</button>
+        <code>
+            &lt;!-- HTML --&gt;
+
+            &lt;p id="id1"&gt; p id1 &lt;/p&gt;
+            &lt;p&gt; p &lt;/p&gt;
+            
+        </code>
+    </pre>
+    <div class="sample">
+        <p id="i1">p id1</p>
+        <p>p</p>
+    </div>
+    <p> ID 선택자는 마침표 대신 #을 사용하고, class속성 대신 id속성을 이용한다는 점을 제외하면 클래스 선택자와 거의 유사합니다.</p>
+    <h3>* 클래스(Class) 선택자 VS 아이디(ID) 선택자</h3>
+    <p>주로 한 페이지 내에 여러번 반복하여 사용할 스타일은 클래스 선택자를 이용하고, 단 한번 사용할 스타일은 ID 선택자를 이용합니다.</p>
+    <p>이는 다음과 같은 두 속성의 차이 때문입니다.</p>
+    <p>class 속성은 어떤 분류 안에 포함된 요소의 특성을 정의하는 데 사용됩니다.</p>
+    <p>이와 달리 id 속성은 어떤 요소에 대해 유일한 특성을 정의합니다. (HTML 문서에서 특정 id속성 값은 단 하나만 존재해야 합니다.</p>    
+    <h2>2.5 복합 선택자</h2>
+    <p>복합 선택자는 2개 이상의 선택자 요소가 모인 선택자입니다.</p>
+    <h3>2.5.1 하위 선택자</h3>
+    <pre>
+        <code>
+            section ul {}
+        </code>
+    </pre>
+    <p>하위 선택자는 앞에 나온 선택자를 기준으로 모든 하위 요소에 스타일을 적용합니다.</p>
+    <img src="../asset/css_selector2.png">
+    <p>위의 예시에서는 section태그의 하위 요소 중 모든 ul태그에 스타일이 적용됩니다.</p>    
+    <h3>2.5.2 자식 선택자</h3>
+    <pre>
+        <code>
+            section>ul {}
+        </code>
+    </pre>
+    <p>태그들의 포함관계에서 포함하는 요소를 부모 요소, 포함되는 요소를 자식 요소라고 합니다.</p>
+    <p>따라서, 자식 선택자의 경우에는 하위 선택자와는 다르게 모든 하위 요소가 아닌 바로 아래 자식 요소에만 스타일을 적용합니다.</p>
+    <img src="../asset/css_selector3.png">
+    <p>위의 예시에서는 section태그 바로 아래의 ul태그에만 스타일이 적용됩니다.</p>
+    <h3>2.5.3 인접 형제 선택자</h3>
+    <pre>
+        <code>
+            h1+ul {}
+        </code>
+    </pre>
+    <p>같은 부모 요소를 가지는 요소들을 형제 관계라고 합니다.</p>
+    <p>이때 HTML문서에 먼저 쓰여진 요소를 형 요소, 나중에 쓰여진 요소를 동생 요소라고 합니다.</p>
+    <p>인접 형제 선택자의 경우에는 형 요소 + 동생 요소의 형태로 사용되며, 형 요소 바로 다음에 위치하는 동생 요소에만 스타일이 적용됩니다.</p>
+    <img class="size2" src="../asset/css_selector4.png">
+    <p>위의 예시에서는 h1태그 바로 다음에 나오는 ul태그에만 스타일이 적용됩니다.</p>  
+    <h3>2.5.4 일반 형제 선택자</h3>
+    <pre>
+        <code>
+            h1~ul {}
+        </code>
+    </pre>
+    <p>일반 형제 선택자의 경우는 형 요소 ~ 동생 요소의 형태로 사용되며, 형 요소 뒤에 나오는 모든 동생요소에 스타일이 적용됩니다.</p>
+    <img class="size2" src="../asset/css_selector5.png">
+    <p>위의 예시에서는 h1태그 뒤에 나오는 모든 ul태그에 스타일이 적용됩니다.</p>    
+    <h2>2.6 속성 선택자</h2>
+    <pre>
+        <code>
+            a[href] {color: red;}
+        <button onclick="attSelector1()">적용</button>
+        <code>
+            input[type="text"] {font-size: 50px;}
+        </code>
+        <button onclick="attSelector2()">적용</button>
+        <code>
+            &lt;!-- HTML --&gt;
+
+            &lt;a href="www.google.com"&gt; a href &lt;/a&gt;
+            &lt;input type="text"&gt;
+            &lt;input type="button"&gt;
+        </code>
+    </pre>
+    <div class="sample">
+        <p id="ah">a href</p>
+        <input id="it" type="text" placeholder="input text">
+        <input type="button" value="input button">
+    </div>
+    <p>속성 선택자는 모두 태그 명과 대괄호 안의 속성 값을 이용하며, 다양한 사용법들이 있습니다.</p>
+    <p>그 중에서 대표적인 2가지 방법을 예시를 통해 알아보겠습니다.</p>
+    <p>우선 첫번째 방법은 태그명과 속성을 이용하는 방법으로, 위의 예시의 경우 a태그 중 href라는 속성을 가지고 있는 모든 요소에 스타일이 적용됩니다.</p>
+    <p>두번째 방법은 선택한 태그가 속성과 그 속성이 가지고 있는 값이 모두 같은 경우에만 적용되는 방법입니다.</p>
+    <p>위의 예시에서는 input태그 중 type속성을 가지고 있고, 그 값이 text인 input태그에만 스타일이 적용됩니다.</p>    
+    <h2>2.7 가상 클래스 선택자</h2>
+    <pre>
+        <code>
+            div:hover {color: red;}
+        </code>
+        <button onclick="hovSelector()">적용</button>
+    </pre>
+    <div class="sample">
+        <p id="dh">div hover</p>
+    </div>
+    <p>가상 클래스는 웹 문서의 소스에는 실제로 존재하지 않지만, 필요에 의해 임의로 가상의 선택자를 지정하여 사용하는 것을 말합니다.</p>
+    <p>위의 예시에 있는 :hover선택자는 '마우스 포인터가 해당 요소 위에 올라가 있는 상태'를 선택합니다.</p>
+    <p>그래서 해당 요소위에 마우스 포인터가 올라가면 스타일이 적용되고, 마우스 포인터가 떨어지면 스타일이 적용되지 않습니다.</p>
+    <h1>3. 선택자 적용 우선순위</h1>
+    <p>선택자는 어떤 종류의 선택자를 이용하는 지에 따라 적용 시 우선순위가 존재합니다.</p>
+    <p>보통 선택자가 보다 더 일반적인 선택을 하는 경우 우선 순위가 밀려납니다.</p>
+    <p>이에 따른 선택자들의 우선순위는 다음과 같습니다.</p>
+    <h3>1. !important</h3>
+    <pre>
+        <code>
+            div { margin: 0 !important;}
+        </code>
+    </pre>
+    <p>위와 같은 방식으로 사용하게 되면 다른 선택자보다 항상 우선적으로 적용됩니다.</p>
+    <h3>2. ID 선택자</h3>
+    <h3>3. CLASS 선택자, 속성 선택자, 가상 클래스 선택자</p>
+    <h3>4. 태그 선택자</h3>
+    <h3>5. 전체 선택자</h3>
+</body>
